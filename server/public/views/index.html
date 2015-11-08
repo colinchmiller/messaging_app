@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messaging App</title>
+    <link rel="stylesheet" href="./vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles/stylesheet.css">
+    <script type="text/javascript" src="./vendors/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/scripts/app.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="inputForm">
+            <label for="name">Enter Name</label>
+            <br>
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+            <br>
+
+            <label for="message">Message</label>
+            <br>
+            <textarea rows="8" cols="100" id="message" name="message" placeholder="Enter a Message"></textarea>
+        </form>
+
+        <div id="buttons">
+            <div id="submit" class="button btn btn-default">Submit</div>
+            <div id="cancel" class="button btn btn-default">Cancel</div>
+        </div>
+
+        <div id="displayField">
+
+        </div>
+    </div>
+</body>
+
+</html>
