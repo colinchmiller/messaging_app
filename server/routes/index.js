@@ -15,7 +15,7 @@ router.get('/data', function(req, res){
     var allMessages = [];
 
     pg.connect(connectionString, function(err, client){
-        var query = client.query("SELECT id, name, message FROM messages ORDER BY name ASC");
+        var query = client.query("SELECT id, name, message FROM messages ORDER BY id ASC");
             query.on('row', function(row){
                 allMessages.push(row);
             });
