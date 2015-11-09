@@ -29,7 +29,6 @@ function clickSubmit(){
         });
         console.log(messageData);
         uploadData();
-        downloadData();
         init();
     });
 }
@@ -47,7 +46,7 @@ function uploadData(){
         url: "/data",
         data: messageData,
         success: function(){
-            console.log("Upload connection successful");
+            downloadData();
         }
     })
 }
