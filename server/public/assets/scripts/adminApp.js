@@ -33,5 +33,13 @@ myApp.controller("MessageController", ['$scope', '$http', function($scope, $http
         });
     };
 
+    //delete is not functioning yet
+    $scope.clickDelete = function(){
+        $http.delete('/data').then(function(response){
+           $scope.messageBoard = response.data;
+        });
+        console.log("Delete!")
+    };
+
     $scope.getData();
 }]);

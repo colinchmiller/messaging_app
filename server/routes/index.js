@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var pg = require('pg');
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/message_app';
 
-
+//This is needed for the heroku database. Place after process.env.DATABASE_URL above
 //+ "?ssl=true"
 
 router.use(bodyParser.json());
@@ -50,6 +50,22 @@ router.post('/data', function(req, res){
                 }
                 res.send(true);
             });
+    });
+});
+
+
+//delete is not functioning yet
+router.delete('/data', function(req,res){
+
+    pg.connect(connectionString, function(err, client){
+       client.query("DELETE FROM messages WHERE id = ($1)", [req.body.id],
+       function(err, result){
+           if (err){
+               console.log("Error deleting data: ", err);
+               res.send(false);
+           }
+           res.send(true);
+       });
     });
 });
 
