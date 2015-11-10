@@ -10,6 +10,7 @@
   "author": "Colin Miller",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.4.7",
     "body-parser": "^1.14.1",
     "bootstrap": "^3.3.5",
     "express": "^4.13.3",

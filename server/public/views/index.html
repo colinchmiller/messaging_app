@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Messaging App</title>
-    <link rel="stylesheet" href="./vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/styles/stylesheet.css">
-    <script type="text/javascript" src="./vendors/jquery.min.js"></script>
-    <script type="text/javascript" src="./assets/scripts/app.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/stylesheet.css">
+
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/app.js"></script>
 </head>
 
 <body>
 
-    <div class="container">
-        <form id="inputForm">
+    <div class="container" ng-controller = "MessageController">
+        <form name="inputForm">
             <label for="name">Enter Name</label>
             <br>
-            <input type="text" id="name" name="name" placeholder="Enter Name">
+            <input ng-model="note.name" type="text" id="name" placeholder="Enter Name">
             <br>
 
             <label for="message">Message</label>
             <br>
-            <textarea rows="8" cols="100" id="message" name="message" placeholder="Enter a Message"></textarea>
+            <textarea ng-model="note.message" rows="8" cols="100" id="message"  placeholder="Enter a Message"></textarea>
         </form>
 
         <div id="buttons">
-            <div id="submit" class="button btn btn-default">Submit</div>
-            <div id="cancel" class="button btn btn-default">Cancel</div>
-            <div id="admin" class="button btn btn-default">Admin</div>
+            <div ng-click="clickButton(note)" class="btn btn-default">Submit</div>
+            <div id="cancel" class="btn btn-default">Cancel</div>
+            <div id="admin" class="btn btn-default">Admin</div>
         </div>
 
-        <div id="displayField">
+        <div ng-repeat="messages in messageBoard">
+
+            <div class="col-md-3 well">
+                <p class="name">{{messages.name}}</p>
+                <p class="message">{{messages.message}}</p>
+            </div>
 
         </div>
     </div>
+
 </body>
 
 </html>
