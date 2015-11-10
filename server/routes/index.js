@@ -53,6 +53,11 @@ router.post('/data', function(req, res){
     });
 });
 
+router.get('/admin', function(req,res){
+    var file = req.params[0] || "views/adminIndex.html";
+    res.sendFile(path.join(__dirname, '../public', file));
+});
+
 
 router.get('/*', function(req,res){
     var file = req.params[0] || "views/index.html";
