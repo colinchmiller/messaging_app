@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <title>Messaging App</title>
+    <title>Message Board</title>
     <link rel="stylesheet" href="/vendors/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/styles/stylesheet.css">
 
@@ -26,7 +26,7 @@
 
         <div id="buttons">
             <div ng-click="clickButton(note)" class="btn btn-default">Submit</div>
-            <div id="cancel" class="btn btn-default">Cancel</div>
+            <div ng-click="clickCancel(note)" class="btn btn-default">Cancel</div>
             <a href="./admin">Administer Access</a>
         </div>
 

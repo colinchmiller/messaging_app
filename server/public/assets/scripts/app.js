@@ -23,6 +23,11 @@ myApp.controller("MessageController", ['$scope', '$http', function($scope, $http
         });
     };
 
+    $scope.clickCancel = function(){
+        $scope.inputForm.$setPristine();
+        $scope.note = defaultForm;
+    };
+
     $scope.getData = function(){
         $http.get('/data').then(function(response){
             $scope.messageBoard = response.data;
@@ -32,6 +37,7 @@ myApp.controller("MessageController", ['$scope', '$http', function($scope, $http
 
     $scope.getData();
 }]);
+
 
 
 
